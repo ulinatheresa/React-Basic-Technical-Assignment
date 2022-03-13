@@ -1,5 +1,6 @@
 import { Component } from "react";
 import animeList from "./dummy-data";
+import MovieCard from "./MovieCard";
 
 class App extends Component {
   render() {
@@ -7,8 +8,14 @@ class App extends Component {
       <div className="container my-5">
         <h1 className="text-center">Anime List</h1>
         <div className="container my-5">
-          <div id="daftar-anime" className="row">
-            <div className="col-6 my-3">
+          <div id="daftar-anime" className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            {
+              animeList?.map((anime, index) => (
+                <MovieCard movie={anime} key={anime?.mal_id} />
+              ))
+            }
+            {/* Card 1 */}
+            {/* <div className="col-6 my-3">
               <div class="card h-100">
                 <img
                   src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg?s=faffcb677a5eacd17bf761edd78bfb3f"
@@ -34,8 +41,10 @@ class App extends Component {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="col-6 my-3">
+            </div> */}
+
+            {/* Card 2 */}
+            {/* <div className="col-6 my-3">
               <div class="card h-100">
                 <img
                   src="https://cdn.myanimelist.net/images/anime/1245/116760.jpg?s=8f52d6ff46ef1233eb9fcd542434221c"
@@ -61,7 +70,7 @@ class App extends Component {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
